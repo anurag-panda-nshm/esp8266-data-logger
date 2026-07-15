@@ -11,7 +11,7 @@ DallasTemperature sensors(&oneWire);
 
 const char* ssid = "MY_SSID";
 const char* password = "anuragini1234";
-const char* serverUrl = "https://dataloggeresp.fastapicloud.dev/api/temperature";
+const char* serverUrl = "https://esp8266-data-logger.fastapicloud.dev/api/temperature";
 
 // Your Root CA Certificate structure (Using the Root Trust Anchor Method)
 const char* root_ca = \
