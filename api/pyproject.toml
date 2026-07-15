@@ -1,0 +1,14 @@
+[project]
+name = "esp8266-logger-supabase"
+version = "0.1.0"
+description = "Secure HTTPS telemetry gateway routing data from ESP8266 to Supabase PostgreSQL"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi[standard]>=0.110.0",
+    "supabase>=2.4.0",
+    "pydantic>=2.6.0"
+]
+
+[tool.fastapi]
+entrypoint = "main:app"
