@@ -16,6 +16,17 @@ class TemperaturePayload(BaseModel):
     temp_c: float
     temp_f: float
 
+@app.get("/")
+def index():
+    return {
+        "Message": "Welcome to ESP8266 Data Logger API",
+        "Endpoints": {
+            "/api/temperature": "POST Temperature Data from DS18B20",
+            "/docs": "View & Test the API"
+        },
+        "created_by": "ANURAG PANDA"
+    }
+
 @app.post("/api/temperature", status_code=status.HTTP_201_CREATED)
 async def log_temperature(data: TemperaturePayload):
     try:
