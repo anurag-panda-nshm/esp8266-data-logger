@@ -22,7 +22,7 @@ A secure, production-grade HTTPS telemetry bridge that ingests temperature data 
 ## 📂 Project Structure
 
 ```Plaintext
-esp8266-logger-supabase/
+api/
 ├── main.py            # FastAPI Application & Pydantic Validation Models
 ├── pyproject.toml     # Packaging Metadata & FastAPI Cloud Deploy Blueprint
 ├── requirements.txt   # Standard PIP Dependency Manifest
