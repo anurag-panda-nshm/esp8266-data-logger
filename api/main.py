@@ -1,13 +1,21 @@
 from fastapi import FastAPI, HTTPException, status
 from pydantic import BaseModel
+from dotenv import load_dotenv
 from supabase import create_client, Client
 import os
 
-app = FastAPI(title="DS18B20 IoT Gateway")
+# 1. Load the .env file parameters explicitly into system memory at boot
+load_dotenv()
 
-# Replace with your actual project keys from Supabase Settings -> API
-SUPABASE_URL = "https://jsexnrtdgvdjrkmnpnvo.supabase.co"
-SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpzZXhucnRkZ3ZkanJrbW5wbnZvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODQwODUxODMsImV4cCI6MjA5OTY2MTE4M30.Rgh4seOomE5vVdtN00itvrgJ-nK_OP2dP8SEm83a-2E"
+# 2. Extract the variables safely using the native os module
+SUPABASE_URL = os.getenv("SUPABASE_URL")
+SUPABASE_KEY = os.getenv("SUPABASE_KEY")
+
+# Safety Check: Stop the server immediately if configurations are missing
+if not SUPABASE_URL or not SUPABASE_KEY:
+    raise RuntimeError("Missing configuration parameters! Please check your .env environment variables.")
+
+app = FastAPI(title="DS18B20 IoT Gateway")
 
 supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
