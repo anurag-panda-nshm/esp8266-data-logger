@@ -172,7 +172,9 @@ echo $null | & "C:\Program Files\Git\usr\bin\openssl.exe" s_client -connect your
 ## Contact Developer
 
 **ANURAG PANDA**
+
 [Portfolio](https://anuragpanda.in)
+
 [Email](emailto:anuragpanda.dev@gmail.com)
 
 # Build With ❤️ by Anurag Panda
